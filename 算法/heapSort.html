@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>堆排序</title>
+</head>
+<body>
+    <script>
+        function heapSort(array){
+            var len = array.length;
+            var i, j, swap;
+            for(i=len-1; i>0; i--){
+
+                if(array[2*i]>=array[2*i-1]){
+                    // 右比左大
+                    if(array[2*i]>array[i-1]){
+                        // 子比父大，交换
+                        swap = array[2*i];
+                        array[2*i] = array[i-1];
+                        array[i-1] = swap;
+
+
+                        if(array[4*i+2]>=array[4*i+1]){
+                            // 右比左大
+                            if(array[4*i+2]>array[2*i]){
+                                // 子比父大
+                                swap = array[4*i+2];
+                                array[4*i+2] = array[2*i];
+                                array[2*i] = swap;
+                            }
+                        }else{
+                            // 左比右大
+                            if(array[4*i+1]>array[2*i]){
+                                // 子比父大
+                                swap = array[4*i+1];
+                                array[4*i+1] = array[2*i];
+                                array[2*i] = swap;
+                            }
+                        }
+                    }
+                }else{
+                    // 左比右大
+                    if(array[2*i-1]>array[i-1]){
+                        // 子比父大，交换
+                        swap = array[2*i-1];
+                        array[2*i-1] = array[i-1];
+                        array[i-1] = swap;
+
+                        if(array[4*i]>=array[4*i-1]){
+                            if(array[4*i]>array[2*i-1]){
+                                swap = array[4*i];
+                                array[4*i] = array[2*i-1];
+                                array[2*i-1] = swap;
+                            }
+                        }else{
+                            if(array[4*i-1]>array[2*i-1]){
+                                swap = array[4*i-1];
+                                array[4*i-1] = array[2*i-1];
+                                array[2*i-1] = swap;
+                            }
+                        }
+
+                    }
+                }
+            }   
+            return array;
+        }
+
+
+
+        var newArray = [4,5,9,1,5,8,3,9,10];
+        // var newArray = [16,14,10,8,7,9,3,2,4];
+        console.log(heapSort(newArray));
+    </script>
+</body>
+</html>

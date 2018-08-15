@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特效键盘</title>
+    <link rel="stylesheet" href="./键盘特效.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="wrap" class="wrap"></div>
+    </main>
+    <footer></footer>
+    <script>
+
+        // 1、初始化数据
+        var hashhash = init();
+        var keys = hashhash['keys'];
+        var hash = hashhash['hash'];
+
+        //2、生成键盘
+        generateKeyBoard(keys,hash);
+
+        //3、用户操作
+        listenToUser(hash);
+
+        // 自定义的工具函数
+        function init(){
+            var keys = {
+                0: {0:'1',1:'2',2:'3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'0','length':'10'},
+                1: {0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p','length':'10'},
+                2: {0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l','length':9},
+                3: {0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m','length':7},
+                'length':4
+            }
+            var hash = {
+                'q':'qq.com',
+                'w':'weibo.com',
+                'z':'zhihu.com'
+            }
+            var hashInLocalStorage = getFromLocalStoage('zzz');
+            if(hashInLocalStorage){
+                hash = hashInLocalStorage;
+            }
+            return {'keys':keys, 'hash':hash};
+        }
+        function getFromLocalStoage(name){
+            return JSON.parse(localStorage.getItem(name) || 'null');
+        }
+        function Tag(tagName,attributes){
+            var element = document.createElement(tagName);
+            for(var key in attributes){
+                element[key] = attributes[key];
+            }
+            return element;
+        }
+        function spanOfTd(keyBoardName){
+            var spanText = Tag('span',{className:'spanText', textContent:keyBoardName});
+            return spanText;
+        }
+        function imgOfTd(webAdress){
+            var imgWeb = Tag('img',{className:'imgWeb'});
+            if(webAdress){
+                imgWeb.src = 'http://'+webAdress+'/favicon.ico';
+            }else{
+                imgWeb.src = './pictures/Icon/魔方32.png';
+            }
+            imgWeb.onerror = function(zzz){
+                zzz.target.src = './pictures/Icon/魔方32.png';  // 上面if或else错误，则执行这里
+            }
+            return imgWeb;
+        }
+        function buttonOfTd(id){
+            var buttonClick = Tag('button',{className:'buttonClick',id:id,textContent:'编辑'});
+            buttonClick.onclick = function(btn){
+                var btnTarget = btn['target'];
+                var btnId = btnTarget['id'];
+                var inputWeb = prompt('给我一个网址');
+                hash[btnId] = inputWeb;
+                localStorage.setItem('zzz', JSON.stringify(hash));
+                var newWeb = 'http://'+hash[btnId]+'/favicon.ico';
+                var oldIcon = btnTarget.previousSibling;
+                oldIcon.src = newWeb;
+                oldIcon.onerror = function(zzz){
+                    zzz.target.src = './pictures/Icon/魔方32.png';
+                }
+            }
+            return buttonClick;
+        }
+        function listenToUser(hash){
+            document.onkeypress = function(keykey){
+                var b = keykey['key'];
+                window.open('http://'+hash[b], '_blank');
+            }
+        }
+        function generateKeyBoard(keys,hash){
+            for(var i=0; i<keys['length']; i++){
+                var tr = Tag('div',{className:'tr'});
+                for(var j=0; j<keys[i]['length']; j++){
+                    var td = Tag('kbd',{className:'td'});   
+                    var spanText = spanOfTd(keys[i][j]);   //添加span标签
+                    var imgWeb = imgOfTd(hash[keys[i][j]]);
+                    var buttonClick = buttonOfTd(keys[i][j]);
+
+                    td.appendChild(spanText);
+                    td.appendChild(imgWeb);
+                    td.appendChild(buttonClick);
+                    tr.appendChild(td);
+                    wrap.appendChild(tr);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简历重做</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script src="./js/swiper.min.js"></script>
+    <script src="http://at.alicdn.com/t/font_769925_8zcxh5htc74.js"></script>
+    <link rel="stylesheet" href="./css/简历头.css">
+</head>
+<body>
+    <!-- 顶部菜单 -->
+    <div class="topBar">
+        <div class="logo">
+            <span>张治国</span>&nbsp;<span>的简历</span>
+        </div>
+        <ul class="nav clearfix">
+            <li>
+                <a href="#">关于</a>
+            </li>
+            <li>
+                <a href="#">技能</a>
+                <ul class="submenu clearfix">
+                    <li><a href="#">技能1</a></li>
+                    <li><a href="#">技能2</a></li>
+                    <li><a href="#">技能3</a></li>
+                    <li><a href="#">技能4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">作品</a>
+                <ul class="submenu clearfix">
+                    <li><a href="#">作品1</a></li>
+                    <li><a href="#">作品2</a></li>
+                    <li><a href="#">作品3</a></li>
+                    <li><a href="#">作品4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">博客</a>
+            </li>
+            <li>
+                <a href="#">联系方式</a>
+            </li>
+            <li>
+                <a href="#">其他内容</a>
+                <ul class="submenu clearfix">
+                    <li><a href="#">爱好</a></li>
+                    <li><a href="#">简历</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+    <!-- 上部背景图 -->
+    <div class="bgdPic"></div>
+    <main>
+        <!-- 简历浮动框 -->
+        <div class="resumeFloatBox">
+            <div class="resumeHeader">
+                <div class="resumePicture">
+                <img src="./pictures/resumePic.jpg" alt="本人照片" width="300px" height="350px">
+                </div>
+                <div class="resumeContent">
+                <div class="hello">Hello</div>
+                <h1 class="name">张治国</h1>
+                <p>前端开发工程师</p>
+                <hr>
+                <dl class="clearfix">
+                    <dt>年龄</dt>
+                    <dd>26</dd>
+                    <dt>所在城市</dt>
+                    <dd>北京</dd>
+                    <dt>邮箱</dt>
+                    <dd>360737368@qq.com</dd>
+                    <dt>手机</dt>
+                    <dd>15611563050</dd>
+                </dl>
+                </div>
+            </div>
+            <div class="resumeBottom">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-gitHub"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-netWork"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-mailBox"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- 简历下载及简介 -->
+        <div class="downloadAndIntro">
+            <a href="./pictures/resumePic.jpg" download="true">下载PDF简历</a>
+            <p class="resumeIntro">张治国：前端开发工程师，目前在家自学</p>
+            <p class="resumeIntro">技能：前端开发、node.js开发</p>
+        </div>
+    </main>
+
+
+    <section class="swiper">
+        <h2>作品集</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img class="swiper-slide" src="./pictures/swiperPic1.jpg" alt="轮播图">
+                <img class="swiper-slide" src="./pictures/swiperPic2.jpg" alt="轮播图">
+                <img class="swiper-slide" src="./pictures/swiperPic3.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+    
+    <section class="message">
+        <h2>留言</h2>
+        <ol class="messageList"></ol>
+        <form class="messageForm">
+            <label>姓名：<input type="text" name="name"></label>
+            <label>内容：<input type="text" name="content"></label>
+            <input type="submit" value="提交按钮">
+        </form>
+    </section>
+
+    <script src="./js/swiper_set.js"></script>
+    <!-- 存储服务 -->
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.9.0/dist/av-min.js"></script>
+    <!-- 实时消息服务 -->
+    <script src="//cdn.jsdelivr.net/npm/leancloud-realtime@4.2.0/dist/realtime.browser.min.js"></script>
+    <script src="./js/base/View.js"></script>
+    <script src="./js/base/Model.js"></script>
+    <script src="./js/base/Controller.js"></script>
+    <script src="./js/message.js"></script>
+  
+</body>
+</html>

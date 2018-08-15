@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序</title>
+</head>
+<body>
+    <script>
+        function bubbleSort(array){
+            var len = array.length, i, j, swap;
+            //比较大小并交换，每轮都把最大的移到最后面，只有调用时才执行
+            function compareAndSwapElement(){
+                for(j=0; j<len-1-i; j++){
+                    if(array[j]>array[j+1]){
+                        swap = array[j+1];
+                        array[j+1] = array[j];
+                        array[j] = swap;
+                    }
+                }
+            }
+
+            for(i=0; i<len-1; i++){
+                compareAndSwapElement();
+            }
+            return array;
+    }
+
+        var newArray = [2,9,8,6,3,4,9,5,5,7,5,0];
+        console.log(bubbleSort(newArray));
+    </script>
+</body>
+</html>

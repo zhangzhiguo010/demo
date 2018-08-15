@@ -1,0 +1,221 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none;}
+ul{list-style-type: none;}
+.clearfix::after{content: ''; display: block; clear: both;}
+
+body{
+    /* body为4×6网格 ，400px是sideBar宽度，950px是hero高度*/
+    display: grid;
+    grid-template-columns: 12% auto 400px 12%;
+    grid-template-rows: auto auto 950px auto auto auto;
+    /* 此处不是类名，而是区域名，为了方便与类名同名而已 */
+    grid-template-areas:"topBar       topBar       topBar       topBar"
+                        "mainHeader   mainHeader   mainHeader   mainHeader"
+                        "hero         hero         hero         hero"
+                        ".            blogPosts    sideBar      ."
+                        ".            news         sideBar      ."
+                        "mainFooter   mainFooter   mainFooter   mainFooter";
+    width: 100%;
+    background: #f4eeea;
+}
+header.topBar{
+    grid-area: topBar;
+    /* border: 2px solid red; */
+    padding: 4px 12%;
+    background: #622b0d;
+}
+header.topBar nav{
+    float: right;
+}
+header.topBar a{
+    float: left;
+    margin:0 13px;
+    color: white;
+}
+header.mainHeader{
+    grid-area: mainHeader;
+    height: 60px;
+    /* border: 2px solid blue; */
+    padding: 12px 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+header.mainHeader p.logo{
+    float: left;
+    color: #622b0d;
+    font-size: 16px;
+}
+header.mainHeader ul{
+    float: right;
+    position: absolute;
+    bottom: 10px;
+    right: 12%;
+}
+header.mainHeader ul li{
+    float: left;
+}
+header.mainHeader ul li a{
+    font-size: 18px;
+    color: #c8825b;
+    margin: 0 10px;
+}
+
+section.hero{
+    grid-area: hero;
+    /* border: 2px solid orange; */
+    padding: 0 12%;
+    background: greenyellow url(../pictures/rs_card.png) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    vertical-align: middle;
+
+    display: grid;
+    grid-template-columns: 380px auto 380px;
+    grid-template-rows: 380px 380px auto;
+    grid-template-areas:".          .        award"
+                        "message    .        ."
+                        ".          .        .";
+}
+section.hero .award{
+    grid-area: award;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+section.hero .award img{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+section.hero .message{
+    grid-area: message;
+    border-radius: 50%;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0);
+    color: white;
+}
+section.hero .message p.one{
+    font-size: 42px;
+}
+section.hero .message p.two{
+    font-size: 67px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+section.hero .message a{
+    display: block;
+    font-size: 24px;
+    margin-top: 40px;
+    padding: 5px 15px;
+    background: #f8825b;  
+}
+section.blogPosts{
+    grid-area: blogPosts;
+    /* height: 350px; */
+    /* border: 2px solid red; */
+    font-size: 20px;
+    color: #622b0d;
+    line-height: 1.5;
+    padding-top: 100px;
+}
+section.blogPosts::first-line{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+section.news{
+    grid-area: news;
+    /* height: 350px; */
+    padding-top: 100px;
+    /* border: 2px solid blue; */
+    font-size: 20px;
+    color: #622b0d;
+    line-height: 1.5;
+}
+section.news::first-line{
+    font-weight: bolder;
+    font-size: 50px;
+}
+aside.sideBar{
+    grid-area: sideBar;
+    /* height: 704px; */
+    /* border: 2px solid orange; */
+    background: #c8825b;
+    padding: 45px 25px 0 25px;
+    margin: 20px 0;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside.sideBar h2{
+    font-size: 36px;
+}
+aside.sideBar img{
+    margin-top: 30px;
+    width: 350px;
+}
+aside.sideBar nav{
+    width: 100%;
+    padding-left: 24px;
+}
+aside.sideBar ul{
+    float: left;
+    margin-top: 30px;
+    margin-left: 
+}
+aside.sideBar ul li{
+    font-size: 20px;
+    line-height: 24px;
+}
+aside.sideBar p{
+    font-size: 26px;
+    margin-top: 50px;
+}
+aside.sideBar button{
+    padding: 10px 30px;
+    margin-top: 50px;
+    border: 0;
+    font-size: 26px;
+    cursor: pointer;
+    background: brown;;
+}
+aside.sideBar button:focus{
+    outline: none;
+}
+footer.mainFooter{
+    grid-area: mainFooter;
+    /* border: 2px solid red; */
+    padding: 16px 12%;
+    background: #afafaf;  
+    margin-top: 50px; 
+}
+footer.mainFooter ul{
+    float: left;
+}
+footer.mainFooter ul li{
+    float: left;
+}
+footer.mainFooter ul li a{
+    font-size: 20px;
+    margin: 0 10px;
+    color: black;
+}
+footer.mainFooter p{
+    float: right;
+    font-size: 18px;
+}
+
+
+
+

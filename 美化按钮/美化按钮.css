@@ -1,0 +1,39 @@
+*{margin: 0; padding: 0;}
+
+button.name{
+    margin: 30px auto auto 30px;
+    display: inline-block;
+    border: 1px solid red;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    background: none;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+button.name:hover{
+    background: lightgray;
+    transition: all 1s;
+}
+button.name:focus{
+    outline: none;
+}
+span.circle{
+    width: 10px;
+    height: 10px;
+    border: 1px solid red;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 小小圆点居中 */
+    margin-top: -5px;
+    margin-left: -5px;
+    transition: all 5s;
+}
+button.name:hover span.circle{
+    transform: scale(10);
+}

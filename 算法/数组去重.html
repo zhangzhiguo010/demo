@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+        let arr = [2,2,5,8,8,1,9,9,3,3]
+        // es5(arr)
+        // es6(arr)
+        // es5_2(arr)
+        // es5_3(arr)
+        es5_Goog(arr)
+
+
+        function es5_Goog(){
+            let obj = {}
+            let newArr = []
+            for(let i=0; i<arr.length; i++){
+                let ele = arr[i]
+                if(obj[ele] !== ele ){
+                    newArr.push(ele)
+                    obj[ele] = ele 
+                }
+            }   
+            console.log(newArr)
+            return newArr
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function es5_3(arrray){
+            let newArr = []
+            arrray.forEach((value) => {
+                if(newArr.indexOf(value) === -1){
+                    console.log(value)
+                    newArr.push(value)
+                }
+            })
+            console.log(newArr)
+        }
+
+
+
+
+        function es5_2(arrray){
+            let newArr=[]
+            for(let i=0; i<arrray.length; i++){
+                if(newArr.indexOf(arrray[i]) === -1){
+                    newArr.push(arrray[i])
+                }
+            }
+            console.log(newArr)
+            return newArr
+        }
+
+        
+
+        function es6(array){
+            let mySet = new Set()
+            let newArr = []
+            for(let i=0; i<array.length; i++){
+                if(!mySet.has(array[i])){
+                    mySet.add(array[i])
+                    newArr.push(array[i])
+                }
+            }
+            console.log(newArr)
+            return newArr
+        }
+
+
+        function es5(array){
+            let newIndex = []   //indexOf后的位置组成的数组
+            let newArr = []     //去重后的元素组成的数组
+            let xxx = []  
+            for(let i=0; i<array.length; i++){
+                newIndex.push(array.indexOf(array[i]))
+                if(xxx.indexOf(newIndex[i]) == -1){
+                    newArr.push(array[i])  
+                    xxx.push(newIndex[i])
+                }
+            }
+            console.log(newArr)
+            return newArr
+        }
+
+   
+
+        
+    </script>
+</body>
+</html>

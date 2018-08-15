@@ -1,0 +1,36 @@
+一、声明式渲染
+Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统：
+// 干了MVC中controller的活
+// model →→→ vue：controller初始化，利用model与后台的联系，将数据载入vue（数据可在model中备份，方便vue的使用）
+// vue →→→ model：controller事件监听，用户对页面的操作，通过model与后台的联系，反馈到后台（数据可在model中备份，方便vue的使用）
+
+二、组件化应用构建：
+在Vue里，一个组件本质上是一个拥有预定义选项的一个Vue实例
+
+
+1、cookie和session的区别：
+cookie是服务器的通过set-cookie响应首部字段发送给浏览器的，浏览器每次请求都会把该信息放在cookie请求首部字段中，
+cookie数据结构是哈希，键值对通常为：name：‘张’， email：‘360@’等用户信息
+session的数据结构是哈希，键值对通常为：sessionId: 021245, sessionId: 164611
+
+cookie暴露用户信息，因为cookie可以被用户修改，服务器判断cookie信息时会被误导，进而导致安全漏洞
+session暴露的只是对于用户来说没有任何意义的随机数，且随机数在下次登录时会变更，这样很安全
+
+session是通过cookie起作用的，服务器流程是：通过读取请求中的coolie的id名，得到随机数，通过比对session中的随机数，得到随机数对应的用户信息，通过该信息
+    再去访问服务器，相当于在cookie和数据库之间多了一道屏障
+
+2、cookie和localStorage的区别：
+cookie需要HTTP传输信息，服务器通过xxx发送给浏览器，浏览器每次请求都把它带上
+localStorage是本地存储，不会通过HTTP传输信息。
+
+cooKie最大为4kb，localStorage最大为5MB
+浏览器关闭cookie就失效，当然，在服务器端可以设置有效期，
+
+localStorage永久有效，除非用户清理浏览器缓存
+
+3、localStorage和sessionStorage的区别：
+localStorage永久有效，除非用户清理浏览器缓存，可用来保存一些需要长久保存的信息
+sessionStorage在用户关闭浏览器时失效，刷新页面不失效，可用来保存一些每次浏览页面，在浏览页面过程中需要使用的信息。
+
+4、设置cookie过期时间：
+删除cookie：

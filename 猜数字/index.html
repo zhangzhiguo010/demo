@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字的游戏</title>
+    <style>
+        .box{display: inline-block;width: 80px;height: 18px;border: 1px solid red;}
+        #history{width: 500px;}
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <button id="button">点击生成随机数</button>
+            <span id="random" class="box"></span>
+        </div>
+        <div>
+            结果：<span id="resoult" class="box"></span>
+            次数：<span id="time" class="box"></span>
+            记录：<span id="history" class="box"></span>
+        </div>
+        <form id="form">
+            输入：<input type="text" id="user">
+        </form>
+
+        <script>  
+            let myPromise = new Promise((resolve,reject)=>{   
+                button.addEventListener('click', ()=>{
+                    let xx = Math.floor(Math.random() * 100) + 1
+                    random.innerText = xx
+                    resolve(xx)
+                }, false)
+            })   
+            
+            myPromise.then((randomNumber)=>{
+                let userNumber  //用户输入
+                let timeNumber=0
+                form.addEventListener('submit', (e)=>{
+                    e.preventDefault()
+                    if(timeNumber<3){
+                        timeNumber++
+                        time.innerText = timeNumber
+                        userNumber = user.value-0
+                        history.innerText = user.value
+
+                        if(userNumber === randomNumber){
+                            resoult.innerText = '相等'
+                            time.innerText = '游戏结束'
+                            timeNumber = 3
+                        }else if(userNumber > randomNumber){
+                            resoult.innerText = '大了'
+                        }else{
+                            resoult.innerText = '小了'
+                        }
+                    }else{
+                        time.innerText = '游戏结束'
+                    }
+                }, false)
+            })
+
+
+        </script>
+    </div>
+</body>
+</html>

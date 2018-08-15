@@ -1,0 +1,1 @@
+{"version":3,"sources":["js\\a.js"],"names":["console","log"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;kBAAe,YAAU;AACrBA,YAAQC,GAAR,CAAY,QAAZ;AACH","file":"a.29eecb68.map","sourceRoot":"..","sourcesContent":["export default function(){\r\n    console.log('我是a.js')\r\n}"]}

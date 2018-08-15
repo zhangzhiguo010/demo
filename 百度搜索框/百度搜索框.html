@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度搜索框</title>
+    <link rel="stylesheet" href="./百度搜索框.css">
+    <!-- <script src="//at.alicdn.com/t/font_730122_3yzrokyubiw.js"></script> -->
+    <script src="./js/百度搜索框.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="input-wrap">
+            <input type="text" id="keyWord" autocomplete="off">
+            <span class="floatDiv">
+                <span>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-huatong"></use>
+                    </svg>
+                </span>
+                <span class="splitLine"></span>
+                <span>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-xiangji"></use>
+                    </svg>                  
+                </span>
+            </span>
+        </div>
+        <button>点击一下</button>
+        <ul class="search" id="search">
+            <li>搜索内容1</li>
+            <li>搜索内容2</li>
+            <li>搜索内容3</li>
+            <li>搜索内容4</li>
+        </ul>
+    </div>
+</body>
+</html>

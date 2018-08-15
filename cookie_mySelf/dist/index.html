@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册界面</title>
+<link rel="stylesheet" href="/js.8f3cc7ce.css"></head>
+<body>
+    <div class="wrapper">
+        <!-- 欢迎界面 -->
+        <div class="welcome">
+            <h1>平谷欢迎您</h1>
+            <h2>您的密码是：$$password$$</h2>
+            <div class="signButton">
+                <div name="sign_up">登录</div>
+                <div name="sign_in">注册</div>
+            </div>
+        </div>
+        <!-- 登录模块 -->
+        <div class="sign_up">
+            <h2>登录</h2>
+            <form>
+                <label for="email">邮箱：</label>
+                <input type="text" id="email">
+                <span class="error"></span>
+                <br>
+                <label for="password">密码：</label>
+                <input type="text" id="password">
+                <span class="error"></span>
+                <br>
+                <input type="submit" value="点击登录">
+            </form>
+        </div>
+        <!-- 注册模块 -->
+        <div class="sign_in">
+            <h2>注册</h2>
+            <form>
+                <label><span class="hint">邮箱：</span><input type="text" name="email"><span class="error"></span></label>
+                <label><span class="hint">密码：</span><input type="password" name="password"><span class="error"></span></label>
+                <label><span class="hint">确认密码：</span><input type="password" name="confirmPassword"><span class="error"></span></label>
+                <input type="submit" value="点击注册">
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="/js.8f3cc7ce.js"></script>
+</body>
+</html>

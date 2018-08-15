@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择排序</title>
+</head>
+<body>
+    <script>
+        function selectionSort(array){
+            var len=array.length, i, j, swap, minIndex, minValue;
+            function findMinElement(){
+                minIndex = i;
+                minValue = array[i];
+                for(j=i; j<len-1; j++){
+                    if(minValue > array[j+1]){
+                        minIndex = j+1;
+                        minValue = array[j+1];
+                    }
+                }
+
+            }
+            function swapElement(){
+                if(minIndex!==i){               //基准条件：原位置
+                    swap = array[minIndex];
+                    array[minIndex] = array[i];
+                    array[i] = swap;
+                }
+            }
+            
+            for(i=0; i<len-1; i++){     //递归条件：元素个数大于1
+                findMinElement();       //你只负责寻找最小值
+                swapElement();          //你只负责将最小值和首位互换
+            }
+            return array;
+        }
+
+        var myArray = [2,9,3,4,6,2,9,7];
+        console.log(selectionSort(myArray));
+    </script>
+</body>
+</html>

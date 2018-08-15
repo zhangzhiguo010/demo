@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计数排序</title>
+</head>
+<body>
+    <script>
+        function countingSort(array){
+            var len = array.length, i, j;
+            var arr = [];
+            var hash = [];
+            rutong();
+            chutong();
+            return arr;
+
+            function rutong(){
+                for(i=0; i<len; i++){
+                    var number = array[i];
+                    if(hash[number]==null){
+                        hash[number] = 1;
+                    }else{
+                        hash[number]++;
+                    }
+                }
+            }
+            function findMax(){
+                var maxValue = array[0], k;
+                for(k=0; k<len-1; k++){
+                    if(array[k+1]>maxValue){
+                        maxValue = array[k+1];
+                    }
+                }
+                return maxValue;
+            }
+            function chutong(){
+                var num;
+                var maxValue = findMax();
+                for(j=0; j<maxValue+1; j++){
+                    var count = hash[j];
+                    if(hash[j]!==null){
+                        for(num=0; num<count; num++){
+                            arr.push(j);
+                        }
+                    }                    
+                }
+                return arr;
+            }  
+        }
+
+
+        var newArray = [0,2,1,56,3,67,3];
+        console.log(countingSort(newArray));    
+    </script>
+
+</body>
+</html>

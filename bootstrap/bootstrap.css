@@ -1,0 +1,109 @@
+a{text-decoration: none; color: white}
+body{
+    background: palegoldenrod;
+}
+header{
+    background: yellow url(../pictures/rs_card.png) no-repeat center;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+}
+.logo img{
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+}
+.title{
+    display: flow-root;
+}
+.title h1{
+    text-align: center;
+    margin-top: 150px;
+}
+.title h1 a{
+    font-size: 40px;
+    font-weight: bolder;
+    color: orangered;
+    text-decoration: none;
+}
+h2{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+    color: orangered;
+}
+main{
+    margin-top: 60px;
+}
+section.main-pic{
+    margin-top: 30px;
+    padding: 12px;
+    background: white;
+}
+section.main-pic img{
+    width: 530px;
+    height: 330px;
+
+}
+section.main-pic>p{
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 6px;
+    text-align: center;
+    margin-bottom: 0;
+}
+section.main-foot{
+    text-align: center;
+    background: white;
+    margin: 50px auto 46px;
+}
+section.main-foot span{
+    display: inline-block;
+    line-height: 46px;
+    margin-left: 100px;
+}
+section.main-foot a{
+    border: 1px solid #bb8b8b;
+    padding: 12px;
+    float: right;
+    color: black;
+    cursor: pointer;
+}
+.a{
+    text-align: center;
+    margin-top: 42px;
+}
+.b{
+    text-align: center;
+    margin-top: 14px;
+}
+
+footer{
+    background: black;;
+    margin-top: 50px;
+    /* height: 340px; */
+}
+.foot-inner{
+    background: black;
+    color: white;
+    margin-top: 36px;
+    height: 200px;
+    width: 300px;
+    margin: 45px;
+}
+.foot-inner h1{
+    font-size: 20px;
+    line-height: 20px;
+}
+.foot-inner hr{
+    width: 300px;
+    height: 0;
+    border-top: 1px solid #b8b8b8;
+    margin: 10px 0 30px 0;
+}
+.foot-inner .nav-box a{
+    display: inline-block;
+    border: 1px solid #e8e8e8;
+}

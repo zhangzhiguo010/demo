@@ -1,0 +1,103 @@
+/* 页面样式格式化 */
+*{margin: 0; padding: 0; box-sizing: border-box}
+ul{list-style-type: none;}
+.clearfix::after{content: ''; display: block; clear: both;}
+a{text-align: center}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+body{
+    width: 100vw;
+    /* 没有高度，flex垂直布局不起作用 */
+    min-height: 100vh;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap{
+    /* border: 1px solid red; */
+    display: flex;
+    position: relative;
+
+}
+.input-wrap{
+    display: inline-block;
+    position: relative;
+    /* border: 1px solid orange; */
+}
+/* 方案1 */
+.input-wrap>input{
+    border: 1px solid #b8b8b8;
+    width: 540px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 8px;
+    font-size: 15px;
+    border-right: none;
+}
+.input-wrap>input:hover{
+    border-color:  #4b94fc;
+}
+.input-wrap>input:focus{
+    outline: none;
+}
+.floatDiv{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.splitLine{
+    width: 0;
+    height: 16px;
+    border-left: 1px solid #b8b8b8;
+    margin: 0 12px;
+}
+svg.icon{
+    width: 20px;
+    height: 20px;
+    fill: #b8b8b8;
+}
+svg.icon:hover{
+    fill: #4b94fc;
+    cursor: pointer;
+}
+
+.input-wrap, button{
+    float: left;
+}
+button{
+    border: 0;
+    background: #3988f8;
+    font-size: 16px;
+    color: white;
+    padding: 0 10px;
+}
+button:focus{
+    outline: none;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+    background: #3781f0;
+}
+
+ul.search{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none; 
+}
+.search.active{
+    display: block;
+}
+

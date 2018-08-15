@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+
+.wrapper {
+  border: 5px solid black; }
+
+.welcome {
+  border: 1px solid red; }
+  .welcome h1 {
+    font-size: 50px; }
+  .welcome .signButton {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around; }
+    .welcome .signButton div {
+      background: greenyellow;
+      padding: 10px 20px; }
+
+.welcome.active {
+  opacity: 0.2; }
+
+.sign_in, .sign_up {
+  width: 500px;
+  background: palegoldenrod;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .sign_in .warning, .sign_up .warning {
+    display: none;
+    width: 100%;
+    height: 30px;
+    border: 1px solid red; }
+
+.sign_in form label {
+  display: block; }
+  .sign_in form label span.hint {
+    display: inline-block;
+    width: 80px; }
+  .sign_in form label span.error {
+    display: inline-block;
+    width: 150px; }
+
+.sign_up form label {
+  width: 80px; }
+
+.sign_in.active, .sign_up.active {
+  display: block; }

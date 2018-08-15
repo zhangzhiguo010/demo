@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function insertionSort(array){
+            var len=array.length, i, j, swap;
+            function swapElement(){
+                swap = array[j];
+                array[j] = array[j-1];
+                array[j-1] = swap;
+            }
+            function compartElement(){
+                for(j=i; j>0; j--){
+                    if(array[j]<array[j-1]){
+                        swapElement();
+                    }
+                }
+            }
+            for(i=1; i<len; i++){
+                compartElement();
+            }
+            return array;
+        }
+
+        var newArray = [2,9,8,6,8,5,3,6,9,5];
+        console.log(insertionSort(newArray));
+    </script>
+</body>
+</html>

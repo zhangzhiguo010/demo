@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多层圆圈</title>
+    <style>
+        *{margin: 0; padding: 0}
+        div{
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+            flex: 1;
+            padding: 30px;
+            border-radius: 50%;
+            transition: all 1s;
+            background: white;
+        }
+        .red{
+            width: 100vw;
+            height: 100vw;
+            
+        }
+        .red.active{background: red;}
+        .orange.active{background: orange}
+        .yellow.active{background: yellow}
+        .blue.active{background: blue}
+        .green.active{background: green}
+        .purple.active{background: purple}
+        .gray.red.active{background: gray}
+    </style>
+</head>
+<body>
+    <div class="red">
+        <div class="orange">
+            <div class="yellow">
+                <div class="blue">
+                    <div class="green">
+                        <div class="purple">
+                            <div class="gray"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let div = document.querySelectorAll('body div')
+        let n=0
+        for(let i=0; i<div.length; i++){
+            div[i].addEventListener('click', function(){
+                setTimeout(function(){
+                    div[i].classList.add('active')
+                }, n*200)
+                n++
+            }, true)
+        }
+
+          for(let i=0; i<div.length; i++){
+            div[i].addEventListener('click', function(){
+                setTimeout(function(){
+                    div[i].classList.remove('active')
+                }, n*200)
+                n++
+            }, false)
+        }
+    </script>
+</body>
+</html>
